@@ -6,20 +6,23 @@ import Stack from '@mui/material/Stack'
 
 export default function Footer() {
   return (
-    <Box component="footer" sx={{ textAlign: 'center', py: 4, mt: 6, bgcolor: 'background.paper', borderTop: 1, borderColor: 'divider' }}>
-      <Stack direction="row" spacing={2} justifyContent="center" sx={{ mb: 2 }}>
-        <Link href="https://github.com" target="_blank" rel="noopener">
+    <Box component="footer" sx={{ textAlign: 'center', py: 4, mt: 6, bgcolor: '#f5f5f5', borderTop: 2, borderColor: '#d32f2f' }}>
+      <Stack direction="row" spacing={3} justifyContent="center" sx={{ mb: 3 }}>
+        <Link href="https://github.com" target="_blank" rel="noopener" sx={{ fontWeight: 'bold', color: '#d32f2f', '&:hover': { color: '#b71c1c' } }}>
           GitHub
         </Link>
-        <Link href="https://linkedin.com" target="_blank" rel="noopener">
+        <Link href="https://linkedin.com" target="_blank" rel="noopener" sx={{ fontWeight: 'bold', color: '#d32f2f', '&:hover': { color: '#b71c1c' } }}>
           LinkedIn
         </Link>
-        <Link href="https://twitter.com" target="_blank" rel="noopener">
+        <Link href="https://twitter.com" target="_blank" rel="noopener" sx={{ fontWeight: 'bold', color: '#d32f2f', '&:hover': { color: '#b71c1c' } }}>
           Twitter
         </Link>
       </Stack>
-      <Typography variant="body2" color="text.secondary">
-        © {new Date().getFullYear()} Your Name. Built with React + MUI.
+      <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+        © {new Date().getFullYear()} Mohammed Alyousefi. All Rights Reserved.
+      </Typography>
+      <Typography variant="caption" color="text.secondary">
+        Built with React + TypeScript + Material-UI
       </Typography>
     </Box>
   )
