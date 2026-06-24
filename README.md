@@ -18,7 +18,7 @@ A modern, responsive portfolio website built with **React**, **TypeScript**, and
 - **Contact** - Contact form for visitors to reach out
 - **Footer** - Social media links and copyright
 
-🚀 **Quick Start**
+🚀 **Quick Start***
 
 ```bash
 cd "c:\Users\mna12\OneDrive\Desktop\code\profile"
