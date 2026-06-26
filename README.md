@@ -4,7 +4,7 @@ A modern, responsive portfolio website built with **React**, **TypeScript**, and
 
 ## 🎨 Features
 
-✨ **Modern Design**
+✨ **Modern Design*
 - Red color theme with professional styling
 - Responsive design (mobile, tablet, desktop)
 - Smooth animations and transitions
