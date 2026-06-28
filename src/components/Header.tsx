@@ -7,7 +7,7 @@ import CodeIcon from '@mui/icons-material/Code';
 
 export default function Header() {
   return (
-    <AppBar position="sticky" sx={{ background: 'linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%)', boxShadow: '0 4px 20px rgba(211, 47, 47, 0.3)' }}>
+    <AppBar position="sticky" sx={{ background: 'linear-gradient(135deg, #212121 0%, #000000 100%)', boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)' }}>
       <Toolbar>
         <CodeIcon sx={{ mr: 1 }} />
         <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontWeight: 'bold', letterSpacing: 1 }}>
