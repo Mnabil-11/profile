@@ -34,7 +34,7 @@ export default function Hero() {
         component="h1"
         gutterBottom
         sx={{
-          color: '#d32f2f',
+          color: '#212121',
           fontWeight: 'bold',
           animation: `${fadeIn} 1s ease-out`,
         }}
@@ -60,9 +60,8 @@ export default function Hero() {
       <Box sx={{ mt: 4, animation: `${fadeIn} 1s ease-out 0.9s`, animationFillMode: 'forwards', opacity: 0 }}>
         <Button
           variant="contained"
-          color="error"
+          sx={{ mr: 2, mb: 1, fontWeight: 'bold', transition: 'transform 0.2s', '&:hover': { transform: 'scale(1.05)' }, bgcolor: '#212121', '&:hover': { bgcolor: '#000000' } }}
           href="mailto:mohammed.alyousefi@example.com"
-          sx={{ mr: 2, mb: 1, fontWeight: 'bold', transition: 'transform 0.2s', '&:hover': { transform: 'scale(1.05)' } }}
         >
           Contact Me
         </Button>
