@@ -6,10 +6,10 @@ import Paper from '@mui/material/Paper'
 export default function About() {
   return (
     <Box component="section" sx={{ mb: 6 }}>
-      <Typography variant="h4" component="h2" sx={{ mb: 3, color: '#d32f2f', fontWeight: 'bold' }}>
+      <Typography variant="h4" component="h2" sx={{ mb: 3, color: '#212121', fontWeight: 'bold' }}>
         About Me
       </Typography>
-      <Paper sx={{ p: 3, bgcolor: '#f5f5f5', borderLeft: '4px solid #d32f2f' }}>
+      <Paper sx={{ p: 3, bgcolor: '#f5f5f5', borderLeft: '4px solid #212121' }}>
         <Typography variant="body1" paragraph sx={{ lineHeight: 1.8, color: '#333' }}>
           I am Mohammed Alyousefi, a dedicated Computer Science student with a passion for web development 
           and software engineering. I enjoy solving complex problems and creating elegant solutions using 

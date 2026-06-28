@@ -38,7 +38,7 @@ const sampleProjects = [
 export default function Projects() {
   return (
     <Box component="section" sx={{ mb: 6 }}>
-      <Typography variant="h4" component="h2" sx={{ mb: 3, textAlign: 'center', fontWeight: 'bold', color: '#d32f2f' }}>
+      <Typography variant="h4" component="h2" sx={{ mb: 3, textAlign: 'center', fontWeight: 'bold', color: '#212121' }}>
         Featured Projects
       </Typography>
       <Grid container spacing={4}>
@@ -52,12 +52,12 @@ export default function Projects() {
                 transition: 'transform 0.3s, box-shadow 0.3s',
                 '&:hover': {
                   transform: 'translateY(-5px)',
-                  boxShadow: '0 8px 20px rgba(211, 47, 47, 0.2)',
+                  boxShadow: '0 8px 20px rgba(33, 33, 33, 0.2)',
                 },
               }}
             >
               <CardContent sx={{ flexGrow: 1 }}>
-                <Typography variant="h6" gutterBottom sx={{ color: '#d32f2f', fontWeight: 'bold' }}>
+                <Typography variant="h6" gutterBottom sx={{ color: '#212121', fontWeight: 'bold' }}>
                   {p.title}
                 </Typography>
                 <Typography color="text.secondary" variant="body2" sx={{ mb: 2 }}>
@@ -70,8 +70,8 @@ export default function Projects() {
                         key={tag}
                         variant="caption"
                         sx={{
-                          bgcolor: '#ffebee',
-                          color: '#d32f2f',
+                          bgcolor: '#e0e0e0',
+                          color: '#212121',
                           px: 1,
                           py: 0.5,
                           borderRadius: 1,
