@@ -38,7 +38,7 @@ const sampleProjects = [
 export default function Projects() {
   return (
     <Box component="section" sx={{ mb: 6 }}>
-      <Typography variant="h4" component="h2" sx={{ mb: 3, textAlign: 'center', fontWeight: 'bold', color: '#d32f2f' }}>
+      <Typography variant="h4" component="h2" sx={{ mb: 3, textAlign: 'center', fontWeight: 'bold', color: '#0F172A' }}>
         Featured Projects
       </Typography>
       <Grid container spacing={4}>
@@ -49,15 +49,17 @@ export default function Projects() {
                 height: '100%',
                 display: 'flex',
                 flexDirection: 'column',
+                borderRadius: '16px',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
                 transition: 'transform 0.3s, box-shadow 0.3s',
                 '&:hover': {
                   transform: 'translateY(-5px)',
-                  boxShadow: '0 8px 20px rgba(211, 47, 47, 0.2)',
+                  boxShadow: '0 8px 20px rgba(37,99,235,0.15)',
                 },
               }}
             >
               <CardContent sx={{ flexGrow: 1 }}>
-                <Typography variant="h6" gutterBottom sx={{ color: '#d32f2f', fontWeight: 'bold' }}>
+                <Typography variant="h6" gutterBottom sx={{ color: '#0F172A', fontWeight: 'bold' }}>
                   {p.title}
                 </Typography>
                 <Typography color="text.secondary" variant="body2" sx={{ mb: 2 }}>
@@ -70,8 +72,8 @@ export default function Projects() {
                         key={tag}
                         variant="caption"
                         sx={{
-                          bgcolor: '#ffebee',
-                          color: '#d32f2f',
+                          bgcolor: '#EFF6FF',
+                          color: '#2563EB',
                           px: 1,
                           py: 0.5,
                           borderRadius: 1,
@@ -85,7 +87,7 @@ export default function Projects() {
                 )}
               </CardContent>
               <CardActions>
-                <Button size="small" href={p.link} startIcon={<VisibilityIcon />}>
+                <Button size="small" href={p.link} startIcon={<VisibilityIcon />} sx={{ color: '#2563EB', fontWeight: 'bold' }}>
                   View Project
                 </Button>
               </CardActions>

@@ -27,15 +27,15 @@ const skillCategories = [
 export default function Skills() {
   return (
     <Box component="section" sx={{ mb: 6 }}>
-      <Typography variant="h4" component="h2" sx={{ mb: 3, color: '#d32f2f', fontWeight: 'bold' }}>
+      <Typography variant="h4" component="h2" sx={{ mb: 3, color: '#0F172A', fontWeight: 'bold' }}>
         Technical Skills
       </Typography>
       <Grid container spacing={2}>
         {skillCategories.map((cat) => (
           <Grid item xs={12} sm={6} md={3} key={cat.category}>
-            <Card sx={{ height: '100%', border: '2px solid #ffebee' }}>
+            <Card sx={{ height: '100%', border: '2px solid #EFF6FF', borderRadius: '12px', boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
               <CardContent>
-                <Typography variant="h6" sx={{ color: '#d32f2f', fontWeight: 'bold', mb: 2 }}>
+                <Typography variant="h6" sx={{ color: '#2563EB', fontWeight: 'bold', mb: 2 }}>
                   {cat.category}
                 </Typography>
                 <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
@@ -44,8 +44,8 @@ export default function Skills() {
                       key={skill}
                       variant="body2"
                       sx={{
-                        bgcolor: '#ffebee',
-                        color: '#d32f2f',
+                        bgcolor: '#EFF6FF',
+                        color: '#2563EB',
                         p: 1,
                         borderRadius: 1,
                         fontWeight: 'bold',
