@@ -6,6 +6,13 @@ import Button from '@mui/material/Button'
 import Stack from '@mui/material/Stack'
 import Alert from '@mui/material/Alert'
 import CircularProgress from '@mui/material/CircularProgress'
+import IconButton from '@mui/material/IconButton'
+import Tooltip from '@mui/material/Tooltip'
+import GitHubIcon from '@mui/icons-material/GitHub'
+import LinkedInIcon from '@mui/icons-material/LinkedIn'
+import WhatsAppIcon from '@mui/icons-material/WhatsApp'
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
+import { motion } from 'framer-motion'
 import { ENDPOINTS } from '../config/api'
 
 export default function Contact() {
@@ -57,11 +64,115 @@ export default function Contact() {
     }
   }
 
+  const focusStyles = {
+    '& .MuiOutlinedInput-root': {
+      '&:hover fieldset': { borderColor: '#2563EB' },
+      '&.Mui-focused fieldset': { borderColor: '#2563EB' },
+    },
+    '& .MuiInputLabel-root.Mui-focused': { color: '#2563EB' },
+  }
+
   return (
     <Box component="section" sx={{ mb: 6 }}>
-      <Typography variant="h4" component="h2" sx={{ mb: 3, color: '#0F172A', fontWeight: 'bold' }}>
-        Get In Touch
+      <Box
+        component={motion.div}
+        initial={{ opacity: 0, y: 32 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+        sx={{
+          position: 'relative',
+          overflow: 'hidden',
+          textAlign: 'center',
+          p: { xs: 4, md: 6 },
+          mb: 5,
+          borderRadius: 4,
+          background: 'linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%)',
+          boxShadow: '0 20px 40px rgba(37,99,235,0.3)',
+        }}
+      >
+        <Box
+          sx={{
+            position: 'absolute',
+            top: '-30%',
+            right: '-10%',
+            width: 280,
+            height: 280,
+            borderRadius: '50%',
+            background: 'rgba(255,255,255,0.08)',
+          }}
+        />
+        <Typography variant="h4" sx={{ color: '#FFFFFF', fontWeight: 800, mb: 1.5 }}>
+          Let's Build Something Great
+        </Typography>
+        <Typography
+          variant="body1"
+          sx={{ color: 'rgba(255,255,255,0.85)', maxWidth: 520, mx: 'auto', mb: 3, lineHeight: 1.8 }}
+        >
+          Have an opportunity, project, or just want to connect? I usually reply fastest on WhatsApp.
+        </Typography>
+        <Button
+          variant="contained"
+          size="large"
+          startIcon={<WhatsAppIcon />}
+          endIcon={<ArrowForwardIcon />}
+          href="https://wa.link/rstkkp"
+          target="_blank"
+          rel="noopener"
+          sx={{
+            fontWeight: 700,
+            px: 4,
+            py: 1.3,
+            bgcolor: '#FFFFFF',
+            color: '#1D4ED8',
+            transition: 'transform 0.2s, box-shadow 0.2s',
+            '&:hover': {
+              bgcolor: '#F8FAFC',
+              transform: 'translateY(-4px)',
+              boxShadow: '0 12px 28px rgba(0,0,0,0.25)',
+            },
+          }}
+        >
+          Chat on WhatsApp
+        </Button>
+      </Box>
+
+      <Typography variant="h5" component="h2" sx={{ mb: 1, color: '#0F172A', fontWeight: 700 }}>
+        Or Send a Message
       </Typography>
+
+      <Stack direction="row" spacing={1} sx={{ mb: 3 }}>
+        <Tooltip title="GitHub">
+          <IconButton
+            href="https://github.com/Mnabil-11"
+            target="_blank"
+            rel="noopener"
+            sx={{ color: '#0F172A', '&:hover': { color: '#2563EB' } }}
+          >
+            <GitHubIcon />
+          </IconButton>
+        </Tooltip>
+        <Tooltip title="LinkedIn">
+          <IconButton
+            href="https://www.linkedin.com/"
+            target="_blank"
+            rel="noopener"
+            sx={{ color: '#0F172A', '&:hover': { color: '#2563EB' } }}
+          >
+            <LinkedInIcon />
+          </IconButton>
+        </Tooltip>
+        <Tooltip title="WhatsApp">
+          <IconButton
+            href="https://wa.link/rstkkp"
+            target="_blank"
+            rel="noopener"
+            sx={{ color: '#0F172A', '&:hover': { color: '#2563EB' } }}
+          >
+            <WhatsAppIcon />
+          </IconButton>
+        </Tooltip>
+      </Stack>
 
       {submitted && (
         <Alert severity="success" sx={{ mb: 2 }}>
@@ -82,10 +193,9 @@ export default function Contact() {
           maxWidth: 600,
           mx: 'auto',
           p: 3,
-          border: '2px solid #EFF6FF',
+          border: '1px solid #E2E8F0',
           borderRadius: 2,
-          bgcolor: '#FFFFFF',
-          boxShadow: '0 2px 8px rgba(0,0,0,0.06)'
+          bgcolor: '#FFFFFF'
         }}
       >
         <Stack spacing={2}>
@@ -98,19 +208,7 @@ export default function Contact() {
             required
             variant="outlined"
             disabled={loading}
-            sx={{
-              '& .MuiOutlinedInput-root': {
-                '&:hover fieldset': {
-                  borderColor: '#2563EB'
-                },
-                '&.Mui-focused fieldset': {
-                  borderColor: '#2563EB'
-                }
-              },
-              '& .MuiInputLabel-root.Mui-focused': {
-                color: '#2563EB'
-              }
-            }}
+            sx={focusStyles}
           />
           <TextField
             fullWidth
@@ -122,19 +220,7 @@ export default function Contact() {
             required
             variant="outlined"
             disabled={loading}
-            sx={{
-              '& .MuiOutlinedInput-root': {
-                '&:hover fieldset': {
-                  borderColor: '#2563EB'
-                },
-                '&.Mui-focused fieldset': {
-                  borderColor: '#2563EB'
-                }
-              },
-              '& .MuiInputLabel-root.Mui-focused': {
-                color: '#2563EB'
-              }
-            }}
+            sx={focusStyles}
           />
           <TextField
             fullWidth
@@ -147,27 +233,23 @@ export default function Contact() {
             rows={4}
             variant="outlined"
             disabled={loading}
-            sx={{
-              '& .MuiOutlinedInput-root': {
-                '&:hover fieldset': {
-                  borderColor: '#2563EB'
-                },
-                '&.Mui-focused fieldset': {
-                  borderColor: '#2563EB'
-                }
-              },
-              '& .MuiInputLabel-root.Mui-focused': {
-                color: '#2563EB'
-              }
-            }}
+            sx={focusStyles}
           />
           <Button
             type="submit"
             variant="contained"
-            color="primary"
             size="large"
             disabled={loading}
-            sx={{ fontWeight: 'bold', py: 1.5 }}
+            sx={{
+              fontWeight: 700,
+              py: 1.5,
+              transition: 'transform 0.2s, box-shadow 0.2s',
+              boxShadow: '0 8px 20px rgba(37,99,235,0.25)',
+              '&:hover': {
+                transform: 'translateY(-3px)',
+                boxShadow: '0 12px 24px rgba(37,99,235,0.35)',
+              },
+            }}
           >
             {loading ? <CircularProgress size={24} color="inherit" /> : 'Send Message'}
           </Button>

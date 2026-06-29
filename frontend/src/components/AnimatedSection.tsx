@@ -1,7 +1,7 @@
 import React from 'react';
-import { useInView } from 'react-intersection-observer';
 import Box from '@mui/material/Box';
 import { SxProps, Theme } from '@mui/material/styles';
+import { motion } from 'framer-motion';
 
 interface AnimatedSectionProps {
   children: React.ReactNode;
@@ -9,20 +9,14 @@ interface AnimatedSectionProps {
 }
 
 const AnimatedSection: React.FC<AnimatedSectionProps> = ({ children, sx }) => {
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
   return (
     <Box
-      ref={ref}
-      sx={{
-        ...sx,
-        transition: 'opacity 0.7s ease-out, transform 0.7s ease-out',
-        opacity: inView ? 1 : 0,
-        transform: inView ? 'translateY(0)' : 'translateY(30px)',
-      }}
+      component={motion.div}
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
+      sx={sx}
     >
       {children}
     </Box>
