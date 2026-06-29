@@ -59,7 +59,7 @@ export default function Contact() {
 
   return (
     <Box component="section" sx={{ mb: 6 }}>
-      <Typography variant="h4" component="h2" sx={{ mb: 3, color: '#d32f2f', fontWeight: 'bold' }}>
+      <Typography variant="h4" component="h2" sx={{ mb: 3, color: '#0F172A', fontWeight: 'bold' }}>
         Get In Touch
       </Typography>
 
@@ -82,9 +82,10 @@ export default function Contact() {
           maxWidth: 600,
           mx: 'auto',
           p: 3,
-          border: '2px solid #ffebee',
+          border: '2px solid #EFF6FF',
           borderRadius: 2,
-          bgcolor: '#fafafa'
+          bgcolor: '#FFFFFF',
+          boxShadow: '0 2px 8px rgba(0,0,0,0.06)'
         }}
       >
         <Stack spacing={2}>
@@ -100,14 +101,14 @@ export default function Contact() {
             sx={{
               '& .MuiOutlinedInput-root': {
                 '&:hover fieldset': {
-                  borderColor: '#d32f2f'
+                  borderColor: '#2563EB'
                 },
                 '&.Mui-focused fieldset': {
-                  borderColor: '#d32f2f'
+                  borderColor: '#2563EB'
                 }
               },
               '& .MuiInputLabel-root.Mui-focused': {
-                color: '#d32f2f'
+                color: '#2563EB'
               }
             }}
           />
@@ -124,14 +125,14 @@ export default function Contact() {
             sx={{
               '& .MuiOutlinedInput-root': {
                 '&:hover fieldset': {
-                  borderColor: '#d32f2f'
+                  borderColor: '#2563EB'
                 },
                 '&.Mui-focused fieldset': {
-                  borderColor: '#d32f2f'
+                  borderColor: '#2563EB'
                 }
               },
               '& .MuiInputLabel-root.Mui-focused': {
-                color: '#d32f2f'
+                color: '#2563EB'
               }
             }}
           />
@@ -149,21 +150,21 @@ export default function Contact() {
             sx={{
               '& .MuiOutlinedInput-root': {
                 '&:hover fieldset': {
-                  borderColor: '#d32f2f'
+                  borderColor: '#2563EB'
                 },
                 '&.Mui-focused fieldset': {
-                  borderColor: '#d32f2f'
+                  borderColor: '#2563EB'
                 }
               },
               '& .MuiInputLabel-root.Mui-focused': {
-                color: '#d32f2f'
+                color: '#2563EB'
               }
             }}
           />
           <Button
             type="submit"
             variant="contained"
-            color="error"
+            color="primary"
             size="large"
             disabled={loading}
             sx={{ fontWeight: 'bold', py: 1.5 }}

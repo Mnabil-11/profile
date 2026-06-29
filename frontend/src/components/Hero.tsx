@@ -25,7 +25,7 @@ export default function Hero() {
           left: 0,
           width: '100%',
           height: '100%',
-          background: 'radial-gradient(circle, rgba(255,235,238,0.3) 0%, rgba(255,255,255,0) 70%)',
+          background: 'radial-gradient(circle, rgba(37,99,235,0.08) 0%, rgba(248,250,252,0) 70%)',
           zIndex: -1,
         }}
       />
@@ -34,7 +34,7 @@ export default function Hero() {
         component="h1"
         gutterBottom
         sx={{
-          color: '#d32f2f',
+          color: '#0F172A',
           fontWeight: 'bold',
           animation: `${fadeIn} 1s ease-out`,
         }}
@@ -60,7 +60,7 @@ export default function Hero() {
       <Box sx={{ mt: 4, animation: `${fadeIn} 1s ease-out 0.9s`, animationFillMode: 'forwards', opacity: 0 }}>
         <Button
           variant="contained"
-          color="error"
+          color="primary"
           href="mailto:mohammed.alyousefi@example.com"
           sx={{ mr: 2, mb: 1, fontWeight: 'bold', transition: 'transform 0.2s', '&:hover': { transform: 'scale(1.05)' } }}
         >
@@ -69,7 +69,17 @@ export default function Hero() {
         <Button
           variant="outlined"
           disabled
-          sx={{ mb: 1, transition: 'transform 0.2s', '&:hover': { transform: 'scale(1.05)' } }}
+          sx={{ 
+            mb: 1, 
+            transition: 'transform 0.2s', 
+            '&:hover': { transform: 'scale(1.05)' },
+            color: '#475569',
+            borderColor: '#E2E8F0',
+            '&.Mui-disabled': {
+              borderColor: '#E2E8F0',
+              color: '#94A3B8',
+            }
+          }}
         >
           Resume (Coming Soon)
         </Button>
