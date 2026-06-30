@@ -3,6 +3,7 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import Avatar from '@mui/material/Avatar';
 
 export default function Header() {
   return (
@@ -16,27 +17,39 @@ export default function Header() {
       }}
     >
       <Toolbar>
-        <Typography
-          variant="h6"
-          component="div"
-          sx={{ flexGrow: 1, fontWeight: 800, letterSpacing: 0.3, color: '#0F172A' }}
-        >
-          <Box component="span" sx={{ color: '#2563EB' }}>{'<'}</Box>
-          Mohammed Alyousefi
-          <Box component="span" sx={{ color: '#2563EB' }}>{'/>'}</Box>
-        </Typography>
-        <Typography
-          variant="body2"
+        <Avatar
           sx={{
-            fontWeight: 600,
-            textTransform: 'uppercase',
-            letterSpacing: 0.5,
-            color: '#475569',
-            display: { xs: 'none', sm: 'block' },
+            width: 40,
+            height: 40,
+            mr: 2,
+            bgcolor: '#2563EB',
+            fontWeight: 700,
+            fontSize: '1.1rem',
           }}
         >
-          Software Engineering Student
-        </Typography>
+          MA
+        </Avatar>
+        <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{ fontWeight: 800, letterSpacing: 0.3, color: '#0F172A' }}
+          >
+            Mohammed Alyousefi
+          </Typography>
+          <Typography
+            variant="body2"
+            sx={{
+              fontWeight: 600,
+              textTransform: 'uppercase',
+              letterSpacing: 0.5,
+              color: '#475569',
+              fontSize: '0.75rem',
+            }}
+          >
+            Software Engineer & Data Scientist
+          </Typography>
+        </Box>
       </Toolbar>
     </AppBar>
   );
