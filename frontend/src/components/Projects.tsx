@@ -9,30 +9,30 @@ import Box from '@mui/material/Box'
 import VisibilityIcon from '@mui/icons-material/Visibility'
 import { motion } from 'framer-motion'
 
-const sampleProjects = [
+const projects = [
   {
-    title: 'E-commerce Platform',
-    description: 'Full-stack web application built with React, TypeScript, and Firebase. Features include product catalog, shopping cart, and payment integration.',
-    link: '#',
-    tags: ['React', 'TypeScript', 'Firebase']
+    title: 'Blackjack Game',
+    description: 'Interactive web-based Blackjack card game with betting system, AI dealer logic, and responsive UI. Built with modern JavaScript and CSS animations for smooth gameplay experience.',
+    link: 'https://github.com/Mnabil-11/blackjack-game',
+    tags: ['JavaScript', 'HTML5', 'CSS3', 'Game Logic']
   },
   {
-    title: 'Task Management App',
-    description: 'Collaborative task management tool with real-time updates, user authentication, and team collaboration features.',
-    link: '#',
-    tags: ['React', 'Node.js', 'MongoDB']
+    title: 'HR Management System',
+    description: 'Comprehensive HR management platform for employee tracking, attendance monitoring, and payroll processing. Features role-based access control and real-time reporting dashboards.',
+    link: 'https://github.com/Mnabil-11/hr-management',
+    tags: ['React', 'Node.js', 'MongoDB', 'REST API']
   },
   {
-    title: 'Data Visualization Dashboard',
-    description: 'Interactive analytics dashboard displaying real-time data with charts, filters, and export capabilities.',
-    link: '#',
-    tags: ['React', 'D3.js', 'API']
+    title: 'Netflix Data Analysis',
+    description: 'Data visualization project analyzing Netflix content library trends, viewing patterns, and regional preferences. Interactive dashboards built with Python and modern visualization libraries.',
+    link: 'https://github.com/Mnabil-11/netflix-analysis',
+    tags: ['Python', 'Pandas', 'Data Visualization', 'Analytics']
   },
   {
     title: 'Personal Portfolio Website',
-    description: 'Responsive portfolio website showcasing projects and skills with modern design patterns.',
-    link: '#',
-    tags: ['React', 'MUI', 'TypeScript']
+    description: 'Modern responsive portfolio showcasing projects and skills with smooth animations, dark mode support, and optimized performance using React and Material-UI.',
+    link: 'https://github.com/Mnabil-11/portfolio',
+    tags: ['React', 'TypeScript', 'MUI', 'Framer Motion']
   }
 ]
 
@@ -43,7 +43,7 @@ export default function Projects() {
         Featured Projects
       </Typography>
       <Grid container spacing={4}>
-        {sampleProjects.map((p, idx) => (
+        {projects.map((p, idx) => (
           <Grid item xs={12} sm={6} key={p.title}>
             <Card
               component={motion.div}

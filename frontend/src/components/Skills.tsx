@@ -15,22 +15,48 @@ const skillCategories = [
   {
     category: 'Full-Stack Web Development',
     icon: <CodeIcon sx={{ color: '#2563EB' }} />,
-    skills: ['JavaScript', 'TypeScript', 'React', 'Node.js', 'REST APIs', 'HTML5 & CSS3', 'Material-UI'],
+    skills: [
+      { name: 'JavaScript', level: 'Advanced' },
+      { name: 'TypeScript', level: 'Advanced' },
+      { name: 'React', level: 'Advanced' },
+      { name: 'Node.js', level: 'Intermediate' },
+      { name: 'REST APIs', level: 'Advanced' },
+      { name: 'HTML5 & CSS3', level: 'Advanced' },
+      { name: 'Material-UI', level: 'Advanced' },
+    ],
   },
   {
     category: 'Data Engineering & Visualization',
     icon: <StorageIcon sx={{ color: '#2563EB' }} />,
-    skills: ['Python', 'SQL', 'Pandas', 'Data Pipelines', 'D3.js', 'MongoDB'],
+    skills: [
+      { name: 'Python', level: 'Advanced' },
+      { name: 'SQL', level: 'Advanced' },
+      { name: 'Pandas', level: 'Advanced' },
+      { name: 'Data Pipelines', level: 'Intermediate' },
+      { name: 'D3.js', level: 'Intermediate' },
+      { name: 'MongoDB', level: 'Intermediate' },
+    ],
   },
   {
     category: 'Artificial Intelligence',
     icon: <SmartToyIcon sx={{ color: '#2563EB' }} />,
-    skills: ['Python', 'Machine Learning', 'NumPy', 'Numerical Methods', 'Algorithm Design'],
+    skills: [
+      { name: 'Machine Learning', level: 'Intermediate' },
+      { name: 'NumPy', level: 'Advanced' },
+      { name: 'Numerical Methods', level: 'Advanced' },
+      { name: 'Algorithm Design', level: 'Advanced' },
+    ],
   },
   {
     category: 'Tools & Engineering Practices',
     icon: <BuildIcon sx={{ color: '#2563EB' }} />,
-    skills: ['Git', 'VS Code', 'Vite', 'System Design', 'Software Engineering'],
+    skills: [
+      { name: 'Git', level: 'Advanced' },
+      { name: 'VS Code', level: 'Advanced' },
+      { name: 'Vite', level: 'Advanced' },
+      { name: 'System Design', level: 'Intermediate' },
+      { name: 'Software Engineering', level: 'Advanced' },
+    ],
   },
 ]
 
@@ -69,8 +95,8 @@ export default function Skills() {
                 <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
                   {cat.skills.map((skill) => (
                     <Chip
-                      key={skill}
-                      label={skill}
+                      key={skill.name}
+                      label={`${skill.name} — ${skill.level}`}
                       sx={{
                         bgcolor: '#EFF6FF',
                         color: '#1D4ED8',
