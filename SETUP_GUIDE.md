@@ -11,8 +11,6 @@ profile/
 │   │   ├── components/
 │   │   │   └── Contact.tsx      # Contact form (updated to use backend)
 │   │   └── ...
-│   ├── .env.local               # Local development env
-│   ├── .env.production          # Production env
 │   └── package.json
 │
 └── backend/           # Express server (deployed on Vercel)
@@ -50,7 +48,7 @@ cd frontend
 npm install
 ```
 
-The frontend will automatically use `http://localhost:5000` for local development (see `.env.local`).
+Set `ACTIVE_ENV` to `'development'` in `frontend/src/config/api.ts` so it points at `http://localhost:5000`.
 
 Start the frontend:
 ```bash
@@ -85,19 +83,29 @@ PORT=5000
 
 ---
 
-## Dynamic API Configuration
+## API Configuration
 
-The frontend automatically switches between environments:
+The frontend switches between environments via a **manual flag** in `frontend/src/config/api.ts` — it does not read `.env.local` / `.env.production` or `import.meta.env.MODE`:
+
+```typescript
+// Set to 'development' or 'production' to manually switch backend
+const ACTIVE_ENV: 'development' | 'production' = 'production'
+
+const API_CONFIG = {
+  development: 'http://localhost:5000',
+  production: 'https://profile-ihp3.vercel.app'
+}
+```
 
 ### Development (Local)
-- **Backend URL**: `http://localhost:5000` (from `.env.local`)
+- Set `ACTIVE_ENV` to `'development'` in `api.ts`
 - Contact form sends to: `http://localhost:5000/api/contact`
 
 ### Production
-- **Backend URL**: `https://your-backend-name.vercel.app` (from `.env.production`)
-- Contact form sends to: `https://your-backend-name.vercel.app/api/contact`
+- Set `ACTIVE_ENV` to `'production'` in `api.ts`
+- Contact form sends to: `https://profile-ihp3.vercel.app/api/contact`
 
-**Update `.env.production`** with your actual Vercel backend URL when deploying!
+**To point at a different backend**, edit the `production` value in `API_CONFIG` directly and commit the change — there is no separate env file to update.
 
 ---
 
@@ -190,7 +198,7 @@ Returns: `{ "status": "ok" }`
 3. Verify sender email address is correct
 
 ### Frontend can't find backend?
-1. Check `.env.local` has correct backend URL
+1. Check `ACTIVE_ENV` in `frontend/src/config/api.ts` is set correctly
 2. Ensure backend is running on port 5000
 3. Check CORS configuration in `backend/index.js`
 
@@ -199,16 +207,7 @@ Returns: `{ "status": "ok" }`
 ## File Breakdown
 
 ### `frontend/src/config/api.ts`
-Centralized configuration for API endpoints. Automatically detects environment and uses the correct backend URL.
-
-**Key Logic:**
-```typescript
-const isDevelopment = import.meta.env.MODE === 'development'
-
-const API_BASE_URL = isDevelopment
-  ? 'http://localhost:5000'
-  : import.meta.env.VITE_BACKEND_URL
-```
+Centralized configuration for API endpoints. Uses the correct backend URL based on the manually-set `ACTIVE_ENV` flag (see [API Configuration](#api-configuration) above).
 
 ### `frontend/src/components/Contact.tsx`
 Updated Contact form that:
@@ -229,7 +228,7 @@ Express server that:
 ## Next Steps
 
 1. ✅ Test locally with `npm run dev` in both folders
-2. Update `.env.production` with real Vercel backend URL
+2. Update the `production` URL in `frontend/src/config/api.ts` with the real Vercel backend URL
 3. Deploy to Vercel (connect GitHub repo)
 4. Test production form submission
 5. Monitor email delivery in Gmail
