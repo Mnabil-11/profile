@@ -23,7 +23,7 @@ export default function Footer() {
           <GitHubIcon />
         </IconButton>
         <IconButton
-          href="https://www.linkedin.com/"
+          href="https://www.linkedin.com/in/mohammed-alyousefi"
           target="_blank"
           rel="noopener"
           sx={{ color: '#0F172A', '&:hover': { color: '#2563EB' } }}

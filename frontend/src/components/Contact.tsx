@@ -164,7 +164,7 @@ export default function Contact() {
         </Tooltip>
         <Tooltip title="Email">
           <IconButton
-            href="mailto:mohammed.alyousefi@example.com"
+            href="mailto:dev.mnabil@gmail.com"
             sx={{ color: '#0F172A', '&:hover': { color: '#2563EB' } }}
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
