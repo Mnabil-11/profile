@@ -66,10 +66,10 @@ export default function Contact() {
 
   const focusStyles = {
     '& .MuiOutlinedInput-root': {
-      '&:hover fieldset': { borderColor: '#2563EB' },
-      '&.Mui-focused fieldset': { borderColor: '#2563EB' },
+      '&:hover fieldset': { borderColor: '#4F46E5' },
+      '&.Mui-focused fieldset': { borderColor: '#4F46E5' },
     },
-    '& .MuiInputLabel-root.Mui-focused': { color: '#2563EB' },
+    '& .MuiInputLabel-root.Mui-focused': { color: '#4F46E5' },
   }
 
   return (
@@ -87,8 +87,8 @@ export default function Contact() {
           p: { xs: 4, md: 6 },
           mb: 5,
           borderRadius: 4,
-          background: 'linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%)',
-          boxShadow: '0 20px 40px rgba(37,99,235,0.3)',
+          background: 'linear-gradient(135deg, #4F46E5 0%, #4338CA 100%)',
+          boxShadow: '0 20px 40px rgba(79,70,229,0.3)',
         }}
       >
         <Box
@@ -124,7 +124,7 @@ export default function Contact() {
             px: 4,
             py: 1.3,
             bgcolor: '#FFFFFF',
-            color: '#1D4ED8',
+            color: '#4338CA',
             transition: 'transform 0.2s, box-shadow 0.2s',
             '&:hover': {
               bgcolor: '#F8FAFC',
@@ -147,17 +147,17 @@ export default function Contact() {
             href="https://github.com/Mnabil-11"
             target="_blank"
             rel="noopener"
-            sx={{ color: '#0F172A', '&:hover': { color: '#2563EB' } }}
+            sx={{ color: '#0F172A', '&:hover': { color: '#4F46E5' } }}
           >
             <GitHubIcon />
           </IconButton>
         </Tooltip>
         <Tooltip title="LinkedIn">
           <IconButton
-            href="https://www.linkedin.com/in/mohammed-alyousefi"
+            href="https://www.linkedin.com/in/mohmmaed-nabil-933a44365/"
             target="_blank"
             rel="noopener"
-            sx={{ color: '#0F172A', '&:hover': { color: '#2563EB' } }}
+            sx={{ color: '#0F172A', '&:hover': { color: '#4F46E5' } }}
           >
             <LinkedInIcon />
           </IconButton>
@@ -165,7 +165,7 @@ export default function Contact() {
         <Tooltip title="Email">
           <IconButton
             href="mailto:dev.mnabil@gmail.com"
-            sx={{ color: '#0F172A', '&:hover': { color: '#2563EB' } }}
+            sx={{ color: '#0F172A', '&:hover': { color: '#4F46E5' } }}
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
               <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
@@ -177,7 +177,7 @@ export default function Contact() {
             href="https://wa.link/rstkkp"
             target="_blank"
             rel="noopener"
-            sx={{ color: '#0F172A', '&:hover': { color: '#2563EB' } }}
+            sx={{ color: '#0F172A', '&:hover': { color: '#4F46E5' } }}
           >
             <WhatsAppIcon />
           </IconButton>
@@ -254,10 +254,10 @@ export default function Contact() {
               fontWeight: 700,
               py: 1.5,
               transition: 'transform 0.2s, box-shadow 0.2s',
-              boxShadow: '0 8px 20px rgba(37,99,235,0.25)',
+              boxShadow: '0 8px 20px rgba(79,70,229,0.25)',
               '&:hover': {
                 transform: 'translateY(-3px)',
-                boxShadow: '0 12px 24px rgba(37,99,235,0.35)',
+                boxShadow: '0 12px 24px rgba(79,70,229,0.35)',
               },
             }}
           >

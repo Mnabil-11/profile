@@ -18,15 +18,15 @@ export default function Footer() {
           href="https://github.com/Mnabil-11"
           target="_blank"
           rel="noopener"
-          sx={{ color: '#0F172A', '&:hover': { color: '#2563EB' } }}
+          sx={{ color: '#0F172A', '&:hover': { color: '#4F46E5' } }}
         >
           <GitHubIcon />
         </IconButton>
         <IconButton
-          href="https://www.linkedin.com/in/mohammed-alyousefi"
+          href="https://www.linkedin.com/in/mohmmaed-nabil-933a44365/"
           target="_blank"
           rel="noopener"
-          sx={{ color: '#0F172A', '&:hover': { color: '#2563EB' } }}
+          sx={{ color: '#0F172A', '&:hover': { color: '#4F46E5' } }}
         >
           <LinkedInIcon />
         </IconButton>
@@ -34,7 +34,7 @@ export default function Footer() {
           href="https://wa.link/rstkkp"
           target="_blank"
           rel="noopener"
-          sx={{ color: '#0F172A', '&:hover': { color: '#2563EB' } }}
+          sx={{ color: '#0F172A', '&:hover': { color: '#4F46E5' } }}
         >
           <WhatsAppIcon />
         </IconButton>

@@ -22,18 +22,17 @@ export default function About() {
       <Typography variant="h4" component="h2" sx={{ mb: 3, color: '#0F172A', fontWeight: 700 }}>
         About Me
       </Typography>
-      <Paper sx={{ p: 3, bgcolor: '#FFFFFF', borderLeft: '4px solid #2563EB' }}>
+      <Paper sx={{ p: 3, bgcolor: '#FFFFFF', borderLeft: '4px solid #4F46E5' }}>
         <Typography variant="body1" paragraph sx={{ lineHeight: 1.8, color: '#334155' }}>
-          I'm Mohammed Alyousefi, a Senior Computer Science and Engineering student at Qassim
-          University, graduating in 2026. I'm passionate about building practical, well-engineered
-          software that bridges three areas I focus on: Full-Stack Web Development, Data
-          Engineering &amp; Visualization, and Artificial Intelligence.
+          I'm Mohammed Alyousefi, a Computer Science student specializing in data science and
+          machine learning. I build end-to-end ML systems — from exploratory data analysis through
+          model deployment via containerized REST APIs — and I also develop full-stack web
+          applications using modern JavaScript frameworks.
         </Typography>
         <Typography variant="body1" paragraph sx={{ lineHeight: 1.8, color: '#334155' }}>
           My academic foundation in algorithms, system design, and software engineering principles
           guides how I approach problems — designing for scalability and maintainability from the
-          start, whether I'm shipping a full-stack application, building a data pipeline, or
-          training a model.
+          start, whether I'm training and serving a model or shipping a full-stack application.
         </Typography>
         <Typography variant="body1" sx={{ lineHeight: 1.8, color: '#334155' }}>
           I'm actively seeking internships and entry-level opportunities where I can apply these
@@ -47,7 +46,7 @@ export default function About() {
           component="h3"
           sx={{ mb: 3, color: '#0F172A', fontWeight: 700, display: 'flex', alignItems: 'center', gap: 1 }}
         >
-          <SchoolIcon sx={{ color: '#2563EB' }} />
+          <SchoolIcon sx={{ color: '#4F46E5' }} />
           Education &amp; Core Coursework
         </Typography>
 
@@ -75,7 +74,7 @@ export default function About() {
                   bgcolor: '#FFFFFF',
                   transition: 'box-shadow 0.3s',
                   '&:hover': {
-                    boxShadow: '0 12px 28px rgba(37,99,235,0.18)',
+                    boxShadow: '0 12px 28px rgba(79,70,229,0.18)',
                   },
                 }}
               >
@@ -84,7 +83,7 @@ export default function About() {
                     {course.name}
                   </Typography>
                   {course.code && (
-                    <Typography variant="caption" sx={{ color: '#2563EB', fontWeight: 700 }}>
+                    <Typography variant="caption" sx={{ color: '#4F46E5', fontWeight: 700 }}>
                       {course.code}
                     </Typography>
                   )}

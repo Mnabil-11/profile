@@ -36,7 +36,7 @@ export default function Hero() {
           transform: 'translateX(-50%)',
           width: '120%',
           height: '120%',
-          background: 'radial-gradient(circle, rgba(37,99,235,0.08) 0%, rgba(248,250,252,0) 65%)',
+          background: 'radial-gradient(circle, rgba(79,70,229,0.08) 0%, rgba(248,250,252,0) 65%)',
           zIndex: -1,
         }}
       />
@@ -53,8 +53,8 @@ export default function Hero() {
       </Box>
 
       <Box component={motion.div} variants={itemVariants}>
-        <Typography variant="h5" sx={{ mb: 2, color: '#2563EB', fontWeight: 600 }}>
-          Senior CSE Student @ Qassim University
+        <Typography variant="h5" sx={{ mb: 2, color: '#4F46E5', fontWeight: 600 }}>
+          Data Science & Full-Stack Developer
         </Typography>
       </Box>
 
@@ -62,12 +62,34 @@ export default function Hero() {
         <Typography
           variant="body1"
           color="text.secondary"
-          sx={{ mb: 4, maxWidth: 640, mx: 'auto', lineHeight: 1.8 }}
+          sx={{ mb: 3, maxWidth: 640, mx: 'auto', lineHeight: 1.8 }}
         >
-          Senior Computer Science and Engineering student at Qassim University, graduating in 2026.
-          Passionate about Full-Stack Web Development, Data Engineering &amp; Visualization, and
-          Artificial Intelligence — building clean, scalable, and intelligent software.
+          Computer Science student building end-to-end ML systems — from exploratory data analysis
+          through model deployment via containerized REST APIs — and full-stack web applications
+          with modern JavaScript frameworks.
         </Typography>
+      </Box>
+
+      <Box component={motion.div} variants={itemVariants}>
+        <Stack direction="row" spacing={1} justifyContent="center" flexWrap="wrap" sx={{ mb: 3, gap: 1 }}>
+          {['Python', 'React', 'TypeScript', 'FastAPI', 'Docker'].map((t) => (
+            <Box
+              key={t}
+              sx={{
+                px: 1.5,
+                py: 0.5,
+                borderRadius: 5,
+                fontSize: '0.8rem',
+                fontWeight: 600,
+                color: '#4338CA',
+                bgcolor: '#EEF2FF',
+                border: '1px solid #E0E7FF',
+              }}
+            >
+              {t}
+            </Box>
+          ))}
+        </Stack>
       </Box>
 
       <Box component={motion.div} variants={itemVariants}>
@@ -82,11 +104,11 @@ export default function Hero() {
             sx={{
               fontWeight: 700,
               px: 3,
-              boxShadow: '0 8px 20px rgba(37,99,235,0.25)',
+              boxShadow: '0 8px 20px rgba(79,70,229,0.25)',
               transition: 'transform 0.2s, box-shadow 0.2s',
               '&:hover': {
                 transform: 'translateY(-3px)',
-                boxShadow: '0 12px 24px rgba(37,99,235,0.35)',
+                boxShadow: '0 12px 24px rgba(79,70,229,0.35)',
               },
             }}
           >
@@ -101,13 +123,13 @@ export default function Hero() {
             sx={{
               fontWeight: 700,
               px: 3,
-              borderColor: '#2563EB',
-              color: '#2563EB',
+              borderColor: '#4F46E5',
+              color: '#4F46E5',
               transition: 'transform 0.2s, box-shadow 0.2s',
               '&:hover': {
                 transform: 'translateY(-3px)',
-                borderColor: '#1D4ED8',
-                background: 'rgba(37,99,235,0.04)',
+                borderColor: '#4338CA',
+                background: 'rgba(79,70,229,0.04)',
               },
             }}
           >

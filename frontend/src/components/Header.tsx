@@ -22,7 +22,7 @@ export default function Header() {
             width: 40,
             height: 40,
             mr: 2,
-            bgcolor: '#2563EB',
+            bgcolor: '#4F46E5',
             fontWeight: 700,
             fontSize: '1.1rem',
           }}
