@@ -75,11 +75,10 @@ The backend uses **Gmail's SMTP** to send emails. Here's how to set it up:
 4. Copy this password and use it in `.env` as `PASS`
 
 ### Example .env
-```
-USER=Dev.mnabil@gmail.com
-PASS=ftfjrwchbtynuinb
+
+USER=your-email@gmail.com
+PASS=xxxx-xxxx-xxxx-xxxx
 PORT=5000
-```
 
 ---
 
