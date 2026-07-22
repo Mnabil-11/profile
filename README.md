@@ -1,85 +1,183 @@
-### ![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=25&pause=1000&color=2986CC&center=true&vCenter=true&width=800&lines=Hi+there%2C+I%27m+Mohammed+Alyousefi%3BComputer+Science+Student%3BData+Science+%26+Machine+Learning+Enthusiast%3BBuilding+end-to-end+ML+systems)
+# 🌐 Personal Portfolio Website
 
-*A Computer Science student focused on Data Science and Machine Learning — building complete pipelines from raw data to a deployed, containerized prediction API — with a Software Engineering background in full-stack applications.*
+[![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Express](https://img.shields.io/badge/Express.js-404D59?style=flat-square)](https://expressjs.com/)
+[![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)](https://vercel.com/)
 
-[![Portfolio](https://img.shields.io/badge/View_My_Portfolio-000000?style=for-the-badge&logo=About.me&logoColor=white)](https://profile-rose-three.vercel.app/)
+Source code for my personal portfolio site
+([profile-mnabil.vercel.app](https://profile-mnabil.vercel.app)) — a React
+frontend with a small Express backend that handles contact-form
+submissions via email, both deployed independently on Vercel.
 
----
-
-### 🚀 About Me
-
-- 🎓 **Computer Science Student**, focused on **Data Science & Machine Learning**.
-- 📊 I build **end-to-end ML systems** — EDA, feature engineering, model comparison, and serving predictions through a REST API.
-- 🐳 I containerize and serve models with **FastAPI + Docker**, with an eye toward things that matter in production: input validation, image size, and honest documentation of limitations.
-- 💻 I also build full-stack apps (**Next.js**, **React**, **Node.js/Express**) when a project needs a real interface, not just a notebook.
-- 🌱 Currently deepening: **model deployment (Render/Railway)**, **automated testing (pytest)**, and **model interpretability (SHAP)**.
-- 💬 Ask me about **Python, scikit-learn, XGBoost, Pandas, FastAPI, TypeScript, or Next.js**.
-- 📫 Reach me: dev.mnabil@gmail.com
-- 🌐 Portfolio: [profile-rose-three.vercel.app](https://profile-rose-three.vercel.app/)
-- ⚡ Fun fact: *I believe code is like humor. When you have to explain it, it's bad.*
+> 📖 Full setup, deployment, and troubleshooting details are in
+> **[SETUP_GUIDE.md](./SETUP_GUIDE.md)** — this README covers the
+> essentials to get running quickly.
 
 ---
 
-### 🛠️ Tech Stack & Tools
+## Architecture
 
-**Data Science & ML:**
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Pandas](https://img.shields.io/badge/Pandas-2C2D72?style=for-the-badge&logo=pandas&logoColor=white)
-![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
-![XGBoost](https://img.shields.io/badge/XGBoost-006ACC?style=for-the-badge)
-![Matplotlib](https://img.shields.io/badge/Matplotlib-013243?style=for-the-badge&logo=matplotlib&logoColor=white)
+```mermaid
+flowchart LR
+    User[Visitor] -->|loads site| FE[Frontend<br/>React + Vite<br/>Vercel]
+    FE -->|POST /api/contact| BE[Backend<br/>Express<br/>Vercel]
+    BE -->|Gmail SMTP| Mail1[Confirmation email<br/>to visitor]
+    BE -->|Gmail SMTP| Mail2[Notification email<br/>to me]
+    BE -->|GET /api/health| Health[Health check]
 
-**Serving & Deployment:**
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+    style FE fill:#61DAFB,color:#000
+    style BE fill:#404D59,color:#fff
+```
 
-**Web Development:**
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)
-![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
-![Express](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
-
-**Databases & Tools:**
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
-![Prisma](https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-00000F?style=for-the-badge&logo=sqlite&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
+The frontend and backend are **deployed and versioned as one repo, but run
+as two separate Vercel projects.** The frontend doesn't know its
+backend's URL automatically — it's set manually via a flag in
+`frontend/src/config/api.ts` (see [API Configuration](#api-configuration)).
 
 ---
 
-### 📊 GitHub Analytics
+## Project Structure
 
-![Streak Stats](https://streak-stats.demolab.com/?user=Mnabil-11&theme=radical&hide_border=true&bg_color=0d1117&stroke=58a6ff)
-
-![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=Mnabil-11&theme=react-dark&hide_border=true&bg_color=0d1117&radius=16)
-
----
-
-### 🏆 Featured Projects
-
-| Project | Description | Tech Stack | Links |
-| --- | --- | --- | --- |
-| **🏠 House Price Prediction** | End-to-end ML system: EDA → feature engineering → 5-model comparison (XGBoost, R² = 0.904) → FastAPI serving → Docker. [Full technical report ↗](https://github.com/Mnabil-11/house-price-prediction/blob/main/MODEL_CARD.md) | `Python` `scikit-learn` `XGBoost` `FastAPI` `Docker` | [Code](https://github.com/Mnabil-11/house-price-prediction) |
-| **⚽ Football Stats Tracker** | Full-stack app merging two football data providers (lineups, events, live stats) with server-side key isolation and graceful fallback when data is unavailable. | `React` `Node.js` `Express` `PostgreSQL` `Prisma` | [Code](https://github.com/Mnabil-11/Football_info) |
-| **🌤️ Atmos Weather Dashboard** | Bilingual (EN/AR, full RTL) weather dashboard with offline support via a service worker and dynamic weather-matched backgrounds. | `Next.js` `TypeScript` `React Query` `Tailwind CSS` | [Code](https://github.com/Mnabil-11/Weather) |
-| **📊 Netflix Analysis** | Data pipeline analyzing 8,000+ titles for content distribution and genre trends. | `Python` `Pandas` `Matplotlib` | [Code](https://github.com/Mnabil-11/Netflix-Data-Analysis) |
-| **🏢 HR Management** | Full-stack CRUD app for employee lifecycles with secure JWT authentication. | `Node.js` `Express` `MongoDB` | [Code](https://github.com/Mnabil-11/HR) |
-| **📈 SQL Sales Data** | Analysis of the Superstore Sales dataset to extract actionable business intelligence. | `SQL` `Data Analysis` | [Code](https://github.com/Mnabil-11/data_A) |
-| **🃏 Blackjack Game** | Single-player card game with dealer AI, betting systems, and responsive UI. | `JavaScript` `HTML5` `CSS3` | [Code](https://github.com/Mnabil-11/blackjack) |
+```
+profile/
+├── frontend/          # React app (deployed on Vercel)
+│   └── src/
+│       ├── config/api.ts       # Manual dev/production backend URL switch
+│       └── components/
+│           └── Contact.tsx      # Contact form, calls the backend
+│
+└── backend/           # Express server (deployed on Vercel)
+    ├── index.js                 # Contact-form email handling
+    ├── .env.example             # Template — never commit the real .env
+    └── package.json
+```
 
 ---
 
-### 📫 Connect With Me
+## Quick Start (Local Development)
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mohmmaed-nabil-933a44365/)
-[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:dev.mnabil@gmail.com)
-[![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=About.me&logoColor=white)](https://profile-rose-three.vercel.app/)
+### 1. Backend
 
-![Waving footer](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=80&section=footer)
+```bash
+cd backend
+npm install
+```
 
-![Profile Views](https://komarev.com/ghpvc/?username=Mnabil-11&label=Profile%20Views&color=0e75b6&style=flat)
+Copy `.env.example` to `.env` and fill in real values:
+
+```
+USER=your-email@gmail.com
+PASS=your-app-specific-password   # see "Gmail Setup" below — never a real password in this file
+PORT=5000
+```
+
+```bash
+npm run dev
+```
+
+### 2. Frontend
+
+```bash
+cd frontend
+npm install
+```
+
+In `frontend/src/config/api.ts`, set:
+
+```ts
+const ACTIVE_ENV: 'development' | 'production' = 'development'
+```
+
+```bash
+npm run dev
+```
+
+Visit `http://localhost:5173` and test the contact form.
+
+---
+
+## Gmail Setup
+
+The backend sends email via **Gmail SMTP** using an **App Password** (not
+your regular Gmail password):
+
+1. Enable 2-Step Verification: [myaccount.google.com/security](https://myaccount.google.com/security)
+2. Generate an App Password: [myaccount.google.com/apppasswords](https://myaccount.google.com/apppasswords)
+3. Put the generated 16-character password in your **local, uncommitted**
+   `.env` as `PASS`
+
+> ⚠️ **Never put a real App Password in any file that gets committed** —
+> not `.env` (already gitignored), and not as an "example" value in
+> documentation either. Use a placeholder like `xxxx-xxxx-xxxx-xxxx` in
+> any docs or examples.
+
+---
+
+## API Configuration
+
+The frontend switches backend URLs via a **manual flag** in
+`frontend/src/config/api.ts` (not `.env.local` / `import.meta.env.MODE`):
+
+```ts
+const ACTIVE_ENV: 'development' | 'production' = 'production'
+
+const API_CONFIG = {
+  development: 'http://localhost:5000',
+  production: 'https://profile-ihp3.vercel.app'
+}
+```
+
+To point at a different backend deployment, edit `API_CONFIG.production`
+directly and commit — there's no separate env file for this.
+
+---
+
+## API Endpoints
+
+| Method | Path | Description |
+|---|---|---|
+| POST | `/api/contact` | Submit the contact form — sends a confirmation email to the visitor and a notification email to me |
+| GET | `/api/health` | Health check — returns `{ "status": "ok" }` |
+
+**Request body for `/api/contact`:**
+```json
+{ "name": "John Doe", "email": "john@example.com", "message": "Hello!" }
+```
+
+---
+
+## Deployment
+
+Both `frontend/` and `backend/` deploy independently to Vercel (connect
+the GitHub repo, set the project root to each folder respectively).
+
+**Backend environment variables** (Vercel dashboard → Settings →
+Environment Variables):
+```
+USER=your-email@gmail.com
+PASS=your-app-specific-password
+PORT=5000
+FRONTEND_URL=https://your-frontend-domain.vercel.app
+```
+
+Full deployment and troubleshooting steps: **[SETUP_GUIDE.md](./SETUP_GUIDE.md)**
+
+---
+
+## Features
+
+- ✅ Dynamic environment configuration (manual dev/production switch)
+- ✅ Contact form with confirmation + admin notification emails
+- ✅ CORS configured for both local and production frontend origins
+- ✅ Client-side form validation and loading states
+
+---
+
+## Security Notes
+
+- `.env` is gitignored — never commit real credentials
+- Use `.env.example` as the template for required variables
+- Gmail App Passwords are safer than the account password, but still
+  **secrets** — treat them like any other credential, including never
+  pasting a real one into documentation as an "example"
