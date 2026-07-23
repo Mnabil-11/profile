@@ -1,4 +1,3 @@
-```
 # Dependencies
 node_modules/
 
@@ -39,7 +38,6 @@ pip-delete-this-directory.txt
 nosetests.xml
 coverage.xml
 *.cover
-*.log
 .git/modules/
 *.sublime-workspace
 .hg/
@@ -50,4 +48,6 @@ hgphattrs
 hgtags
 .DS_Store
 Thumbs.db
-```
+
+# Claude Code local settings
+.claude/
