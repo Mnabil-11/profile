@@ -1,23 +1,38 @@
 require('dotenv').config()
 const express = require('express')
 const cors = require('cors')
+const rateLimit = require('express-rate-limit')
 const nodemailer = require('nodemailer')
 
 const app = express()
 
+const allowedOrigins = [
+  'http://localhost:5173',
+  'http://localhost:3000',
+  process.env.FRONTEND_URL
+].filter(Boolean)
+
 app.use(cors({
-  origin: '*',
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  origin: allowedOrigins,
+  methods: ['GET', 'POST', 'OPTIONS'],
   credentials: false
 }))
 
 app.use(express.json())
 
+const contactLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 5,
+  message: { error: 'Too many messages sent. Please try again later.' },
+  standardHeaders: true,
+  legacyHeaders: false
+})
+
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: process.env.USER,
-    pass: process.env.PASS
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS
   }
 })
 
@@ -32,39 +47,54 @@ const verifyEmail = async () => {
 
 verifyEmail()
 
-app.post('/api/contact', async (req, res) => {
+const escapeHtml = (str) => str
+  .replace(/&/g, '&amp;')
+  .replace(/</g, '&lt;')
+  .replace(/>/g, '&gt;')
+  .replace(/"/g, '&quot;')
+  .replace(/'/g, '&#39;')
+
+app.post('/api/contact', contactLimiter, async (req, res) => {
   const { name, email, message } = req.body
 
   if (!name || !email || !message) {
     return res.status(400).json({ error: 'All fields are required' })
   }
 
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  if (!emailRegex.test(email)) {
+    return res.status(400).json({ error: 'Invalid email address' })
+  }
+
+  const safeName = escapeHtml(name)
+  const safeMessage = escapeHtml(message).replace(/\n/g, '<br>')
+
   try {
     const mailOptions = {
-      from: process.env.USER,
+      from: process.env.EMAIL_USER,
       to: email,
-      subject: `Thank you for contacting me, ${name}!`,
+      subject: `Thank you for contacting me, ${safeName}!`,
       html: `
-        <h2>Hello ${name},</h2>
+        <h2>Hello ${safeName},</h2>
         <p>Thank you for reaching out! I've received your message and will get back to you as soon as possible.</p>
         <hr>
         <h3>Your Message:</h3>
-        <p>${message.replace(/\n/g, '<br>')}</p>
+        <p>${safeMessage}</p>
         <hr>
         <p>Best regards,<br>Your Name</p>
       `
     }
 
     const adminMailOptions = {
-      from: process.env.USER,
-      to: process.env.USER,
-      subject: `New Contact Form Submission from ${name}`,
+      from: process.env.EMAIL_USER,
+      to: process.env.EMAIL_USER,
+      subject: `New Contact Form Submission from ${safeName}`,
       html: `
         <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Name:</strong> ${safeName}</p>
+        <p><strong>Email:</strong> ${escapeHtml(email)}</p>
         <p><strong>Message:</strong></p>
-        <p>${message.replace(/\n/g, '<br>')}</p>
+        <p>${safeMessage}</p>
       `
     }
 
@@ -80,7 +110,7 @@ app.post('/api/contact', async (req, res) => {
 
 app.get('/', (req, res) => {
   const isProduction = process.env.NODE_ENV === 'production'
-  const emailConfigured = process.env.USER && process.env.PASS ? '✅' : '❌'
+  const emailConfigured = process.env.EMAIL_USER && process.env.EMAIL_PASS ? '✅' : '❌'
 
   res.send(`
     <!DOCTYPE html>
@@ -284,8 +314,7 @@ app.get('/', (req, res) => {
 
         <div class="info-section">
           <div class="info-label">Email Configuration</div>
-          <div>${emailConfigured} ${process.env.USER ? 'Configured' : 'Not Configured'}</div>
-          ${process.env.USER ? `<div class="info-value">${process.env.USER}</div>` : ''}
+          <div>${emailConfigured} ${process.env.EMAIL_USER ? 'Configured' : 'Not Configured'}</div>
         </div>
 
         <div class="divider"></div>

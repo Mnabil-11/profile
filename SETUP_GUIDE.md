@@ -32,8 +32,8 @@ npm install
 
 Update `.env` with your Gmail credentials:
 ```
-USER=your-email@gmail.com
-PASS=your-app-specific-password
+EMAIL_USER=your-email@gmail.com
+EMAIL_PASS=your-app-specific-password
 PORT=5000
 ```
 
@@ -72,13 +72,14 @@ The backend uses **Gmail's SMTP** to send emails. Here's how to set it up:
 1. Go to [myaccount.google.com/apppasswords](https://myaccount.google.com/apppasswords)
 2. Select **Mail** and **Windows Computer** (or your device)
 3. Google will generate a 16-character password
-4. Copy this password and use it in `.env` as `PASS`
+4. Copy this password and use it in `.env` as `EMAIL_PASS`
 
 ### Example .env
-
-USER=your-email@gmail.com
-PASS=xxxx-xxxx-xxxx-xxxx
+```
+EMAIL_USER=your-email@gmail.com
+EMAIL_PASS=your-app-specific-password
 PORT=5000
+```
 
 ---
 
@@ -128,8 +129,8 @@ npm run build  # (if using TypeScript, not needed for JS)
 Add these in Vercel dashboard → Settings → Environment Variables:
 
 ```
-USER=your-email@gmail.com
-PASS=your-app-specific-password
+EMAIL_USER=your-email@gmail.com
+EMAIL_PASS=your-app-specific-password
 PORT=5000
 FRONTEND_URL=https://your-frontend-domain.vercel.app
 ```
