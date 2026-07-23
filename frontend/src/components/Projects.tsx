@@ -11,6 +11,12 @@ import { motion } from 'framer-motion'
 
 const projects = [
   {
+    title: 'Telco Customer Churn',
+    description: 'Production-minded churn prediction system: SQL-backed EDA, a business-derived decision threshold instead of the default 0.5 (recall jumps from 55% to 98.4%), SHAP-explained predictions, and a documented encoding bug caught by the test suite before it shipped — served via a tested, Dockerized, CI-verified FastAPI app.',
+    link: 'https://github.com/Mnabil-11/telco-customer-churn',
+    tags: ['Python', 'scikit-learn', 'FastAPI', 'Docker', 'SHAP']
+  },
+  {
     title: 'House Price Prediction',
     description: 'End-to-end ML pipeline predicting house sale prices from the Ames Housing dataset — data cleaning, feature engineering, model comparison, and a containerized FastAPI prediction endpoint with SHAP-based explainability.',
     link: 'https://github.com/Mnabil-11/house-price-prediction',
