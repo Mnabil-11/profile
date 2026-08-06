@@ -48,7 +48,7 @@ export default function Hero() {
           gutterBottom
           sx={{ color: '#0F172A', fontWeight: 800, letterSpacing: -0.5 }}
         >
-          Mohammed Alyousefi
+          Mohammed nabil
         </Typography>
       </Box>
 
