@@ -35,7 +35,7 @@ export default function Header() {
             component="div"
             sx={{ fontWeight: 800, letterSpacing: 0.3, color: '#0F172A' }}
           >
-            Mohammed Alyousefi
+            Mohammed nabil
           </Typography>
           <Typography
             variant="body2"
