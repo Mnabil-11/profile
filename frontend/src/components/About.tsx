@@ -24,7 +24,7 @@ export default function About() {
       </Typography>
       <Paper sx={{ p: 3, bgcolor: '#FFFFFF', borderLeft: '4px solid #4F46E5' }}>
         <Typography variant="body1" paragraph sx={{ lineHeight: 1.8, color: '#334155' }}>
-          I'm Mohammed Alyousefi, a Computer Science student specializing in data science and
+          I'm Mohammed nabil, a Computer Science student specializing in data science and
           machine learning. I build end-to-end ML systems — from exploratory data analysis through
           model deployment via containerized REST APIs — and I also develop full-stack web
           applications using modern JavaScript frameworks.
